@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sblocca il tuo Potenziale | Corso di Empowerment</title>
+    <title>Valerio Ianitto | Crescita Personale ed Empowerment</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
@@ -14,6 +15,7 @@
             --dark: #1e293b;
             --light: #f8fafc;
             --text: #475569;
+            --gradient: linear-gradient(90deg, #6366f1, #10b981);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,6 +25,7 @@
             color: var(--text);
             line-height: 1.6;
             scroll-behavior: smooth;
+            background-color: #ffffff;
         }
 
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--dark); }
@@ -41,7 +44,11 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); }
+        .logo { 
+            font-weight: 800; 
+            font-size: 1.5rem; 
+            color: var(--dark);
+        }
 
         nav a {
             text-decoration: none;
@@ -60,69 +67,101 @@
             display: flex;
             align-items: center;
             gap: 50px;
+            min-height: 80vh;
         }
 
         .hero-content { flex: 1; }
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; }
+        
+        /* IL TUO NOME CON IL CARATTERE DI PRIMA */
+        .hero-content h1 { 
+            font-size: 4.5rem; 
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p { font-size: 1.5rem; color: #64748b; margin-bottom: 35px; font-weight: 500; }
 
         .btn {
-            padding: 15px 35px;
+            padding: 18px 40px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             transition: transform 0.3s, box-shadow 0.3s;
             display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
         }
 
         .btn-primary { background: var(--primary); color: white; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3); }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(99, 102, 241, 0.4); }
 
-        /* SEZIONI COMUNI */
+        /* SEZIONI */
         section { padding: 100px 5%; }
         .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 2.5rem; margin-bottom: 15px; }
+        .section-title h2 { font-size: 3rem; font-weight: 800; margin-bottom: 15px; }
 
-        /* FEATURES / PILASTRI */
+        /* GRIGLIA PILASTRI */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
 
         .card {
             background: white;
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 50px 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
             transition: 0.3s;
             text-align: center;
             border: 1px solid #f1f5f9;
         }
 
         .card:hover { transform: translateY(-10px); border-color: var(--primary); }
-        .card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+        
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: #f1f5f9;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary);
+            font-size: 32px;
+        }
 
-        /* CURRICULUM */
+        /* CURRICULUM / STEPS */
         .curriculum { background: var(--light); }
+        .step-container { max-width: 900px; margin: 0 auto; }
         .step {
             display: flex;
             gap: 30px;
             margin-bottom: 40px;
             background: white;
-            padding: 30px;
-            border-radius: 15px;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            align-items: center;
         }
         .step-num {
-            background: var(--secondary);
+            background: var(--gradient);
             color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
+            font-size: 1.5rem;
             flex-shrink: 0;
         }
 
@@ -131,104 +170,122 @@
             max-width: 800px;
             margin: 0 auto;
             background: white;
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
         }
 
         form { display: grid; gap: 20px; }
         input, textarea {
-            padding: 15px;
+            padding: 18px;
             border: 1px solid #e2e8f0;
-            border-radius: 10px;
+            border-radius: 15px;
             font-family: inherit;
+            font-size: 1rem;
+            background: #f8fafc;
+            transition: 0.3s;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
         }
 
         /* FOOTER */
         footer {
             background: var(--dark);
             color: white;
-            padding: 50px 5% 20px;
+            padding: 60px 5% 30px;
             text-align: center;
         }
 
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; padding-top: 120px; }
-            .hero-content h1 { font-size: 2.5rem; }
-            nav { display: none; }
+        .social-links { margin-bottom: 30px; }
+        .social-links i { 
+            font-size: 1.5rem; 
+            margin: 0 15px; 
+            cursor: pointer; 
+            transition: color 0.3s;
+        }
+        .social-links i:hover { color: var(--secondary); }
+
+        @media (max-width: 992px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 140px; }
+            .hero-content h1 { font-size: 3.5rem; }
+            .hero-image { width: 100%; max-width: 500px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Evolve.</div>
+        <div class="logo">Valerio Ianitto</div>
         <nav>
-            <a href="#perche">Perché</a>
-            <a href="#programma">Programma</a>
-            <a href="#contatti">Iscriviti</a>
+            <a href="#percorso">Il Viaggio</a>
+            <a href="#pilastri">Pilastri</a>
+            <a href="#contatti">Contattami</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Investi nella persona più importante: <span>Te Stesso.</span></h1>
-            <p>Un percorso trasformativo di Crescita Personale ed Empowerment per adulti pronti a riscrivere il proprio futuro.</p>
+            <h1>Valerio<br>Ianitto</h1>
+            <p>Crescita Personale ed Empowerment: Il Tuo Nuovo Inizio.</p>
             <a href="#contatti" class="btn btn-primary">Inizia Ora il Tuo Viaggio</a>
         </div>
-        <div style="flex: 1;">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="[Immagine di Persone che lavorano]" style="width: 100%; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+        <div class="hero-image" style="flex: 1;">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80" alt="[Immagine di ufficio moderno con laptop e tazza di caffè]" style="width: 100%; border-radius: 40px; box-shadow: 0 25px 50px rgba(0,0,0,0.15); object-fit: cover; height: 550px;">
         </div>
     </section>
 
-    <section id="perche">
+    <section id="pilastri">
         <div class="section-title">
-            <h2>I Pilastri del Corso</h2>
-            <p>Sviluppa le competenze necessarie per navigare la complessità della vita moderna.</p>
+            <h2>I 3 Pilastri del Successo</h2>
+            <p>Sblocca il potenziale inespresso e sviluppa una mentalità resiliente.</p>
         </div>
         <div class="grid-3">
             <div class="card">
-                <i class="fas fa-brain"></i>
-                <h3>Mindset Dinamico</h3>
-                <p>Impara a trasformare ogni ostacolo in una opportunità di apprendimento accelerato.</p>
+                <div class="icon-box"><i class="fa-solid fa-brain"></i></div>
+                <h3>Mindset</h3>
+                <p>Cambiare il modo in cui interpreti le sfide e i fallimenti per trasformarli in forza.</p>
             </div>
             <div class="card">
-                <i class="fas fa-bolt"></i>
-                <h3>Empowerment</h3>
-                <p>Riprendi il controllo delle tue decisioni e aumenta la tua autoefficacia percepita.</p>
+                <div class="icon-box"><i class="fa-solid fa-bullseye"></i></div>
+                <h3>Focus</h3>
+                <p>Dirigere l'energia verso ciò che conta veramente per te, eliminando le distrazioni.</p>
             </div>
             <div class="card">
-                <i class="fas fa-seedling"></i>
-                <h3>Resilienza</h3>
-                <p>Costruisci una base emotiva solida per gestire lo stress e le sfide quotidiane.</p>
+                <div class="icon-box"><i class="fa-solid fa-rocket"></i></div>
+                <h3>Azione</h3>
+                <p>Passare dalla teoria alla pratica con passi concreti e costanti ogni giorno.</p>
             </div>
         </div>
     </section>
 
-    <section id="programma" class="curriculum">
+    <section id="percorso" class="curriculum">
         <div class="section-title">
-            <h2>Cosa Imparerai</h2>
+            <h2>Il Percorso dell'Evoluzione</h2>
         </div>
-        <div style="max-width: 900px; margin: 0 auto;">
+        <div class="step-container">
             <div class="step">
                 <div class="step-num">1</div>
                 <div>
-                    <h3>Consapevolezza e Analisi</h3>
-                    <p>Scaviamo a fondo nei tuoi valori e nelle tue credenze limitanti attraverso la Finestra di Johari.</p>
+                    <h3>Consapevolezza</h3>
+                    <p>Riconoscere il bisogno di cambiare e identificare i propri valori fondamentali.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-num">2</div>
                 <div>
-                    <h3>Strategia e Obiettivi SMART</h3>
-                    <p>Definiamo una roadmap chiara per i prossimi 12 mesi con obiettivi misurabili e realistici.</p>
+                    <h3>Apprendimento</h3>
+                    <p>Acquisire nuove abilità strategiche e strumenti di potere decisionale.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-num">3</div>
                 <div>
-                    <h3>Azione e Abitudini</h3>
-                    <p>Applichiamo la regola dell'1% per automatizzare il successo e costruire routine potenzianti.</p>
+                    <h3>Padronanza</h3>
+                    <p>I nuovi comportamenti diventano naturali. Raggiungi l'autentico Empowerment.</p>
                 </div>
             </div>
         </div>
@@ -236,26 +293,28 @@
 
     <section id="contatti">
         <div class="section-title">
-            <h2>Pronto a partire?</h2>
-            <p>Lascia i tuoi dati per ricevere il programma completo e una consulenza gratuita.</p>
+            <h2>Prenota una Sessione</h2>
+            <p>Scrivimi per iniziare il tuo percorso personalizzato. Riceverai risposta entro 24 ore.</p>
         </div>
         <div class="contact-container">
-            <form action="#">
-                <input type="text" placeholder="Nome Completo" required>
-                <input type="email" placeholder="Email" required>
-                <textarea rows="5" placeholder="Parlaci dei tuoi obiettivi..."></textarea>
-                <button type="submit" class="btn btn-primary" style="border: none; cursor: pointer;">Invia Richiesta</button>
+            <!-- Destinatario: calerio.ianitto@gmail.com -->
+            <form action="https://formspree.io/f/calerio.ianitto@gmail.com" method="POST">
+                <input type="text" name="nome" placeholder="Il tuo Nome" required>
+                <input type="email" name="_replyto" placeholder="La tua Email" required>
+                <textarea name="messaggio" rows="5" placeholder="Quali sono i tuoi obiettivi di crescita?" required></textarea>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Invia Richiesta</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Evolve. Corso di Crescita Personale. Tutti i diritti riservati.</p>
-        <div style="margin-top: 20px;">
-            <i class="fab fa-instagram" style="margin: 0 10px;"></i>
-            <i class="fab fa-linkedin" style="margin: 0 10px;"></i>
-            <i class="fab fa-facebook" style="margin: 0 10px;"></i>
+        <div class="social-links">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-facebook"></i>
         </div>
+        <p>&copy; 2026 Valerio Ianitto. Tutti i diritti riservati.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">Crescita Personale & Coaching Strategico</p>
     </footer>
 
 </body>
